@@ -1,0 +1,41 @@
+import java.util.*;
+import java.math.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        int ans=0;
+        ArrayList arrayList = new ArrayList();
+        double c ;
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            for (double j =0;j<n;j++)
+            {
+                if (j == 0) {
+                    ans+=a;
+                }
+                c = (int) Math.pow(2,j);
+                ans += (int) (b*c);
+                arrayList.add(ans);
+
+            }
+            arrayList.add("\n");
+            ans = 0;
+        }
+        for (int k=0; k<arrayList.size(); k++) {
+            if(arrayList.get(k)=="\n"){
+                System.out.print(arrayList.get(k));
+            }
+            else {
+                System.out.print(arrayList.get(k) + " ");
+            }
+        }
+        in.close();
+    }
+
+}
