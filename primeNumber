@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class primeNumber {
+
+    public static void main(String[] args)
+    {
+        System.out.println("Enter the number to find out if its a prime number");
+        int x = new Scanner(System.in).nextInt();
+        System.out.println( x + primeNumber(x));
+    }
+
+    static String primeNumber(int x)
+    {
+        int sqrRT = (int) Math.sqrt(x)+1;
+        boolean isPrime = true;
+
+        if (x==2|| x==3)
+        {
+            isPrime=true;
+        }
+        for (int i = 2;i<= sqrRT;i++)
+        {
+            if (x%i==0)
+            {
+                isPrime=false;
+                break;
+            }
+
+        }
+        if (isPrime==true)
+        {
+            return " is a prime number";
+        }
+        else
+            return " is not a prime number";
+    }
+
+}
